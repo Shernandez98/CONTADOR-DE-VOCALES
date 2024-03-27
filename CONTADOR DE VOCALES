@@ -1,0 +1,27 @@
+package com.shm;
+import java.util.Scanner;
+
+public class ContadorVocales {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        System.out.print("Introduce una cadena de texto: ");
+        String cadena = teclado.nextLine();
+
+        int contadorVocales = 0;
+        for (int i = 0; i < cadena.length(); i++) {
+            char caracter = cadena.charAt(i);
+            // Verificamos si el caracter es una vocal (mayúscula o minúscula)
+            if (esVocal(caracter)) {
+                contadorVocales++;
+            }
+        }
+
+        System.out.println("La cadena contiene " + contadorVocales + " vocales.");
+    }
+
+    // Función para verificar si un caracter es una vocal
+    public static boolean esVocal(char c) {
+        c = Character.toLowerCase(c); // Convertimos a minúscula para comparar
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
+}
